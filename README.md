@@ -1,6 +1,7 @@
-源码来自：[Lean-lede](https://github.com/coolsnowwolf/lede)
-
-自动编译项目来自：[Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
+>固件来源：
+[![Lean](https://img.shields.io/badge/Lede-Lean-red.svg?style=flat&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
+ [![Lienol](https://img.shields.io/badge/Package-Lienol-blueviolet.svg?style=flat&logo=appveyor)](https://github.com/Lienol/openwrt-package) 
+[![P3TERX](https://github.com/P3TERX/Actions-OpenWrt)
 
 
 ![Status](https://github.com/2CW/jdy-openwrt/actions/workflows/build-openwrt.yml/badge.svg)
