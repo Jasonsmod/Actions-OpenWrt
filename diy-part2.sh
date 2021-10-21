@@ -10,11 +10,24 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
+
+# 自定义固件设置
+# rm -rf package/default-settings/files/zzz-default-settings
+# cp -f ../zzz-default-settings package/lean/default-settings/files/
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
-# 自定义固件设置
-#rm -rf package/default-settings/files/zzz-default-settings
-#cp -f ../zzz-default-settings package/lean/default-settings/files/
+sed -i "2i uci set turboacc.config.sw_flow='1'" ./package/lean/default-settings/files/zzz-default-settings # 默认开启网络加速
+sed -i "3i uci set turboacc.config.hw_flow='1'" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "4i uci set turboacc.config.fullcone_nat='1'" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "5i uci set turboacc.config.bbr_cca='1'" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "6i uci commit turboacc" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "7i uci set vsftpd.@listen[0].enable4=0" ./package/lean/default-settings/files/zzz-default-settings    # 关闭FTP
+sed -i "8i uci commit vsftpd" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "9i echo "conf-dir=/etc/dnsmasq.d" >> /etc/dnsmasq.conf" ./package/lean/default-settings/files/zzz-default-settings #DNSMASQ 设置
+
+# WIFI名为MAC后六位
+# rm -rf package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# cp -f ../mac80211.sh package/kernel/mac80211/files/lib/wifi/
 
 # 添加温度显示(By YYiiEt)
 #sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
@@ -48,4 +61,3 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/OpenWrt-Actions/smartdns.git package/smartdns
 # git clone https://github.com/OpenWrt-Actions/luci-app-smartdns-compat.git package/luci-app-smartdns-compat
 # svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-theme-atmaterial package/luci-theme-atmaterial
-
