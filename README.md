@@ -1,6 +1,6 @@
 源码来自：[Lean-lede](https://github.com/coolsnowwolf/lede)
 
-云编译项目来自：[Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
+自动编译项目来自：[Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
 
 
 ![Status](https://github.com/2CW/jdy-openwrt/actions/workflows/build-openwrt.yml/badge.svg)
@@ -13,5 +13,4 @@
 | 路由 & SSH | 192.168.50.1 | root | password |
 
 
-## License
-[MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/main/LICENSE) © [**P3TERX**](https://p3terx.com)
+
