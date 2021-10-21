@@ -9,7 +9,11 @@
 ## 固件下载：
 
 **Actions下奶牛快传或Artifacts下载**
-![Status](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/OpenWrt-r619ac.yml/badge.svg)
+### r619ac
+### ![Status](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/OpenWrt-r619ac.yml/badge.svg)
+### ![update-checker](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/update-checker.yml/badge.svg)
+### 
+
 
 
 ## 默认配置
