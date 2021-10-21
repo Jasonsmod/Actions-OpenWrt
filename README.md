@@ -1,9 +1,8 @@
 >固件来源：
 [![Lean](https://img.shields.io/badge/Lede-Lean-red.svg?style=flat&logo=appveyor)](https://github.com/coolsnowwolf/lede) 
  [![Lienol](https://img.shields.io/badge/Package-Lienol-blueviolet.svg?style=flat&logo=appveyor)](https://github.com/Lienol/openwrt-package) 
- [![P3TERX](https://img.shields.io/badge/Package-P3TERX-blueviolet.svg?style=flat&logo=appveyor)](https://github.com/P3TERX/Actions-OpenWrt)
+ [![P3TERX](https://img.shields.io/badge/Actions-P3TERX-blueviolet.svg?style=flat&logo=appveyor)](https://github.com/P3TERX/Actions-OpenWrt)
 
-[![OpenWrt](https://img.shields.io/badge/From-OpenWrt-blue.svg?style=for-the-badge&logo=appveyor)]
 ![Status](https://github.com/2CW/jdy-openwrt/actions/workflows/build-openwrt.yml/badge.svg)
 ![update-checker](https://github.com/2CW/jdy-openwrt/actions/workflows/update-checker.yml/badge.svg)
 
