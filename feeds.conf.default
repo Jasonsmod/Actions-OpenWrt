@@ -8,8 +8,8 @@ src-git telephony https://git.openwrt.org/feed/telephony.git
 #src-git oldpackages http://git.openwrt.org/packages.git
 #src-link custom /usr/src/openwrt/custom-feed
 src-git helloworld https://github.com/fw876/helloworld
-#src-git kenzo https://github.com/kenzok8/openwrt-packages
-src-git OpenWrt-packages https://github.com/OpenWrt-Actions/OpenWrt-Packages
+src-git kenzo https://github.com/kenzok8/openwrt-packages
+#src-git OpenWrt-packages https://github.com/OpenWrt-Actions/OpenWrt-Packages
 
 src-git small https://github.com/kenzok8/small
 src-git oaf https://github.com/destan19/OpenAppFilter
