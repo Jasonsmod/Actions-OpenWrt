@@ -27,7 +27,7 @@
 * Pass****
 * 广告屏蔽大师 Plus+
 * AdGuard Home
-* Shadow****
+* 酸酸乳P+
 * MentoHUST
 * 京东签到服务
 * 微信推送
