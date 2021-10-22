@@ -20,12 +20,13 @@ on:
         default: 'false'
 
 env:
+  target: r619ac
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: Config/r619ac/r619ac.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  FEEDS_CONF: Config/$target/feeds.conf.default
+  CONFIG_FILE: Config/$target/$target.config
+  DIY_P1_SH: Config/$target/diy-part1.sh
+  DIY_P2_SH: Config/$target/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
@@ -81,18 +82,18 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        if [ -n "$(ls -A "Config/r619ac/patches" 2>/dev/null)" ]; then
-          find "Config/r619ac/patches" -type f -name '*.patch' -print0 | sort -z | xargs -I % -t -0 -n 1 sh -c "cat '%'  | patch -d './' -p1 --forward --no-backup-if-mismatch"
+        if [ -n "$(ls -A "Config/$target/patches" 2>/dev/null)" ]; then
+          find "Config/$target/patches" -type f -name '*.patch' -print0 | sort -z | xargs -I % -t -0 -n 1 sh -c "cat '%'  | patch -d './' -p1 --forward --no-backup-if-mismatch"
         fi
-        if [ -n "$(ls -A "Config/r619ac/files" 2>/dev/null)" ]; then
-         cp -rf Config/r619ac/files files
-         chmod -R 777 Config/r619ac/files/* ./
+        if [ -n "$(ls -A "Config/$target/files" 2>/dev/null)" ]; then
+         cp -rf Config/$target/files files
+         chmod -R 777 Config/$target/files/* ./
         fi
-        if [ -n "$(ls -A "Config/r619ac/diy" 2>/dev/null)" ]; then
-         cp -Rf Config/r619ac/diy/* ./
+        if [ -n "$(ls -A "Config/$target/diy" 2>/dev/null)" ]; then
+         cp -Rf Config/$target/diy/* ./
         fi
-        #[ -e b Config/r619ac/$CONFIG_FILE ]
-        #mv  Config/r619ac/$CONFIG_FILE .config
+        #[ -e b Config/$target/$CONFIG_FILE ]
+        #mv  Config/$target/$CONFIG_FILE .config
         #make defconfig
         rm -rf {LICENSE,README,README.md}
         rm -rf ./*/{LICENSE,README,README.md}
