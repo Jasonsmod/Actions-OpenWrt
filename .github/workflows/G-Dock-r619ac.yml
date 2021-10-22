@@ -58,7 +58,7 @@ jobs:
     
     - name: 检测脚本设置
       run: |
-        source "${GITHUB_WORKSPACE}/build/${{matrix.target}}/settings.ini"
+        source "${GITHUB_WORKSPACE}/Config/${{matrix.target}}/settings.ini"
         echo "REPO_URL=${REPO_URL}" >> $GITHUB_ENV
         echo "REPO_BRANCH=${REPO_BRANCH}" >> $GITHUB_ENV
         echo "CONFIG_FILE=${CONFIG_FILE}" >> $GITHUB_ENV
@@ -115,30 +115,30 @@ jobs:
         fi
         cp -Rf `find ./ -maxdepth 1 -type d ! -path './openwrt' ! -path './'` openwrt
         cd openwrt
-        if [ -f "build/${{matrix.target}}/$DIY_P1_SH" ]; then
-          chmod +x build/${{matrix.target}}/$DIY_P1_SH
-          /bin/bash "build/${{matrix.target}}/$DIY_P1_SH"
+        if [ -f "Config/${{matrix.target}}/$DIY_P1_SH" ]; then
+          chmod +x Config/${{matrix.target}}/$DIY_P1_SH
+          /bin/bash "Config/${{matrix.target}}/$DIY_P1_SH"
         fi
         if [ ${{matrix.target}} != openwrt ]; then
           git clone -b $REPO_BRANCH --single-branch https://github.com/281677160/openwrt-package package/danshui
         fi
         ./scripts/feeds clean && ./scripts/feeds update -a && ./scripts/feeds install -a && ./scripts/feeds install -a
-        if [ -f "build/${{matrix.target}}/$DIY_P2_SH" ]; then
-          chmod +x build/${{matrix.target}}/$DIY_P2_SH
-          /bin/bash "build/${{matrix.target}}/$DIY_P2_SH"
+        if [ -f "Configd/${{matrix.target}}/$DIY_P2_SH" ]; then
+          chmod +x Config/${{matrix.target}}/$DIY_P2_SH
+          /bin/bash "Config/${{matrix.target}}/$DIY_P2_SH"
         fi
-        if [ -n "$(ls -A "build/${{matrix.target}}/patches" 2>/dev/null)" ]; then
-          find "build/${{matrix.target}}/patches" -type f -name '*.patch' -print0 | sort -z | xargs -I % -t -0 -n 1 sh -c "cat '%'  | patch -d './' -p1 --forward --no-backup-if-mismatch"
+        if [ -n "$(ls -A "Config/${{matrix.target}}/patches" 2>/dev/null)" ]; then
+          find "Config/${{matrix.target}}/patches" -type f -name '*.patch' -print0 | sort -z | xargs -I % -t -0 -n 1 sh -c "cat '%'  | patch -d './' -p1 --forward --no-backup-if-mismatch"
         fi
-        if [ -n "$(ls -A "build/${{matrix.target}}/files" 2>/dev/null)" ]; then
-         cp -rf build/${{matrix.target}}/files files
-         chmod -R 777 build/${{matrix.target}}/files/* ./
+        if [ -n "$(ls -A "Config/${{matrix.target}}/files" 2>/dev/null)" ]; then
+         cp -rf Config/${{matrix.target}}/files files
+         chmod -R 777 Config/${{matrix.target}}/files/* ./
         fi
-        if [ -n "$(ls -A "build/${{matrix.target}}/diy" 2>/dev/null)" ]; then
-         cp -Rf build/${{matrix.target}}/diy/* ./
+        if [ -n "$(ls -A "Config/${{matrix.target}}/diy" 2>/dev/null)" ]; then
+         cp -Rf Config/${{matrix.target}}/diy/* ./
         fi
-        [ -e build/${{matrix.target}}/$CONFIG_FILE ]
-        mv build/${{matrix.target}}/$CONFIG_FILE .config
+        [ -e Config/${{matrix.target}}/$CONFIG_FILE ]
+        mv Config/${{matrix.target}}/$CONFIG_FILE .config
         make defconfig
         rm -rf {LICENSE,README,README.md}
         rm -rf ./*/{LICENSE,README,README.md}
