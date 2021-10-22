@@ -86,13 +86,13 @@ jobs:
         fi
         if [ -n "$(ls -A "Config/r619ac/files" 2>/dev/null)" ]; then
          cp -rf Config/r619ac/files files
-         chmod -R 777 build/${{matrix.target}}/files/* ./
+         chmod -R 777 Config/r619ac/files/* ./
         fi
         if [ -n "$(ls -A "Config/r619ac/diy" 2>/dev/null)" ]; then
          cp -Rf Config/r619ac/diy/* ./
         fi
-        [ -e build/${{matrix.target}}/$CONFIG_FILE ]
-        mv build/${{matrix.target}}/$CONFIG_FILE .config
+        [ -e b Config/r619ac/$CONFIG_FILE ]
+        mv  Config/r619ac/$CONFIG_FILE .config
         make defconfig
         rm -rf {LICENSE,README,README.md}
         rm -rf ./*/{LICENSE,README,README.md}
