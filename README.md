@@ -10,7 +10,7 @@
 
 **Actions下奶牛快传或Artifacts下载**
 ### r619ac
-### ![Status](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/OpenWrt-r619ac.yml/badge.svg)
+### ![Status](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/G-Dock-r619ac.yml/badge.svg)
 ### ![update-checker](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/update-checker.yml/badge.svg)
 ### 
 
