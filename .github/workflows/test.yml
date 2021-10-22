@@ -91,9 +91,9 @@ jobs:
         if [ -n "$(ls -A "Config/r619ac/diy" 2>/dev/null)" ]; then
          cp -Rf Config/r619ac/diy/* ./
         fi
-        [ -e b Config/r619ac/$CONFIG_FILE ]
-        mv  Config/r619ac/$CONFIG_FILE .config
-        make defconfig
+        #[ -e b Config/r619ac/$CONFIG_FILE ]
+        #mv  Config/r619ac/$CONFIG_FILE .config
+        #make defconfig
         rm -rf {LICENSE,README,README.md}
         rm -rf ./*/{LICENSE,README,README.md}
         rm -rf ./*/*/{LICENSE,README,README.md}
