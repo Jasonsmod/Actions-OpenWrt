@@ -37,6 +37,11 @@ jobs:
   build:
     #runs-on: ubuntu-18.04
     runs-on: Ubuntu-20.04
+    name: set path ${{matrix.target}}
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [r619ac]
 
     steps:
     - name: Checkout
@@ -87,6 +92,27 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        # add patch
+        if [ -n "$(ls -A "Config/${{matrix.target}}/patches" 2>/dev/null)" ]; then
+          find "Config/${{matrix.target}}/patches" -type f -name '*.patch' -print0 | sort -z | xargs -I % -t -0 -n 1 sh -c "cat '%'  | patch -d './' -p1 --forward --no-backup-if-mismatch"
+        fi
+        if [ -n "$(ls -A "Config/${{matrix.target}}/files" 2>/dev/null)" ]; then
+         cp -rf Config/${{matrix.target}}/files files
+         chmod -R 777 Config/${{matrix.target}}/files/* ./
+        fi
+        if [ -n "$(ls -A "Config/${{matrix.target}}/diy" 2>/dev/null)" ]; then
+         cp -Rf Config/${{matrix.target}}/diy/* ./
+        fi
+        rm -rf {LICENSE,README,README.md}
+        rm -rf ./*/{LICENSE,README,README.md}
+        rm -rf ./*/*/{LICENSE,README,README.md}
+        #make defconfig
+
+        # git clone https://github.com/openwrt-dev/po2lmo.git
+        # pushd po2lmo
+        make && sudo make install
+        popd
+        # patch end
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
