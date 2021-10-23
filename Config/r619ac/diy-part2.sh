@@ -16,14 +16,14 @@
 # cp -f ../zzz-default-settings package/lean/default-settings/files/
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
-#sed -i "2i uci set turboacc.config.sw_flow='1'" ./package/lean/default-settings/files/zzz-default-settings # 默认开启网络加速
-#sed -i "3i uci set turboacc.config.hw_flow='1'" ./package/lean/default-settings/files/zzz-default-settings
-#sed -i "4i uci set turboacc.config.fullcone_nat='1'" ./package/lean/default-settings/files/zzz-default-settings
-#sed -i "5i uci set turboacc.config.bbr_cca='1'" ./package/lean/default-settings/files/zzz-default-settings
-#sed -i "6i uci commit turboacc" ./package/lean/default-settings/files/zzz-default-settings
-#sed -i "7i uci set vsftpd.@listen[0].enable4=0" ./package/lean/default-settings/files/zzz-default-settings    # 关闭FTP
-#sed -i "8i uci commit vsftpd" ./package/lean/default-settings/files/zzz-default-settings
-#sed -i "9i echo "conf-dir=/etc/dnsmasq.d" >> /etc/dnsmasq.conf" ./package/lean/default-settings/files/zzz-default-settings #DNSMASQ 设置
+sed -i "2i uci set turboacc.config.sw_flow='1'" ./package/lean/default-settings/files/zzz-default-settings # 默认开启网络加速
+sed -i "3i uci set turboacc.config.hw_flow='1'" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "4i uci set turboacc.config.fullcone_nat='1'" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "5i uci set turboacc.config.bbr_cca='1'" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "6i uci commit turboacc" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "7i uci set vsftpd.@listen[0].enable4=0" ./package/lean/default-settings/files/zzz-default-settings    # 关闭FTP
+sed -i "8i uci commit vsftpd" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "9i echo "conf-dir=/etc/dnsmasq.d" >> /etc/dnsmasq.conf" ./package/lean/default-settings/files/zzz-default-settings #DNSMASQ 设置
 
 # WIFI名为MAC后六位
 # rm -rf package/kernel/mac80211/files/lib/wifi/mac80211.sh
