@@ -20,13 +20,13 @@ on:
         default: 'false'
 
 env:
-  target_device : r619ac
+  Set_directory : Config/r619ac/
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  FEEDS_CONF: Config/r619ac/feeds.conf.default
-  CONFIG_FILE: Config/r619ac/r619ac.config
-  DIY_P1_SH: Config/r619ac/diy-part1.sh
-  DIY_P2_SH: Config/r619ac/diy-part2.sh
+  FEEDS_CONF: feeds.conf.default
+  CONFIG_FILE: .config
+  DIY_P1_SH: diy-part1.sh
+  DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
@@ -64,10 +64,10 @@ jobs:
 
     - name: Load custom feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
+        [ -e ${Set_directory}$FEEDS_CONF ] && mv ${Set_directory}$FEEDS_CONF openwrt/feeds.conf.default
+        chmod +x $Set_directory$DIY_P1_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+        $GITHUB_WORKSPACE/${Set_directory}$DIY_P1_SH
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -77,11 +77,11 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        [ -e Config/r619ac/files ] && mv Config/r619ac/files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
+        [ -e ${Set_directory}files ] && mv ${Set_directory}files openwrt/files
+        [ -e ${Set_directory}$CONFIG_FILE ] && mv ${Set_directory}$CONFIG_FILE openwrt/.config
+        chmod +x ${Set_directory}$DIY_P2_SH
         cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+        $GITHUB_WORKSPACE/${Set_directory}$DIY_P2_SH
         rm -rf {LICENSE,README,README.md}
         rm -rf ./*/{LICENSE,README,README.md}
         rm -rf ./*/*/{LICENSE,README,README.md}
