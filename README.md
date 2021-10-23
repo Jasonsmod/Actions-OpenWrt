@@ -13,7 +13,7 @@
     
 <br/>
 
-点击下表中 [![](https://img.shields.io/badge/设备-passing-32CD32.svg)](https://github.com/Jasonsmod/OpenWrt-DIY/actions) 即可跳转到该设备固件下载页面
+点击下表中 [![](https://img.shields.io/badge/设备-passing-32CD32.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/actions) 即可跳转到该设备固件下载页面
 |    序号   |     平台     |   设备编译状态及下载链接 | 备注说明   |
 | :-----------------: | :-------------: |:-----------------: |  :-----------------: | 
 | 1 |        [![](https://img.shields.io/badge/OpenWrt-竞斗云-FFFFFF.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/blob/main/.github/workflows/r619ac.yml)         |[![](https://github.com/Jasonsmod/OpenWrt-DIY/workflows/Build%20G-Dock%20OpenWrt/badge.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/gdock.yml)  | 
