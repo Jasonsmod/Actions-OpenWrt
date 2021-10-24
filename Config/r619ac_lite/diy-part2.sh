@@ -21,8 +21,8 @@ sed -i "3i uci set turboacc.config.hw_flow='1'" ./package/lean/default-settings/
 sed -i "4i uci set turboacc.config.fullcone_nat='1'" ./package/lean/default-settings/files/zzz-default-settings
 sed -i "5i uci set turboacc.config.bbr_cca='1'" ./package/lean/default-settings/files/zzz-default-settings
 sed -i "6i uci commit turboacc" ./package/lean/default-settings/files/zzz-default-settings
-#sed -i "7i uci set vsftpd.@listen[0].enable4=0" ./package/lean/default-settings/files/zzz-default-settings    # 关闭FTP
-#sed -i "8i uci commit vsftpd" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "7i uci set vsftpd.@listen[0].enable4=0" ./package/lean/default-settings/files/zzz-default-settings    # 关闭FTP
+sed -i "8i uci commit vsftpd" ./package/lean/default-settings/files/zzz-default-settings
 sed -i "9i echo "conf-dir=/etc/dnsmasq.d" >> /etc/dnsmasq.conf" ./package/lean/default-settings/files/zzz-default-settings #DNSMASQ 设置
 
 # WIFI名为MAC后六位
