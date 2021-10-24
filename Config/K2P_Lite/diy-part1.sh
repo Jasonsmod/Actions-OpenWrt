@@ -1,0 +1,75 @@
+CONFIG_TARGET_ipq40xx=y
+CONFIG_TARGET_ipq40xx_DEVICE_p2w_r619ac-128m=y
+CONFIG_TARGET_BOARD="ipq40xx"
+
+CONFIG_TARGET_ROOTFS_CPIOGZ=n
+CONFIG_TARGET_ROOTFS_TARGZ=n
+CONFIG_TARGET_ROOTFS_INITRAMFS=n
+# USB3.0支持:
+CONFIG_PACKAGE_kmod-usb-ohci=y
+CONFIG_PACKAGE_kmod-usb-ohci-pci=y
+CONFIG_PACKAGE_kmod-usb2=y
+CONFIG_PACKAGE_kmod-usb2-pci=y
+CONFIG_PACKAGE_kmod-usb3=y
+# IPv6支持:
+CONFIG_PACKAGE_ipv6helper=n
+CONFIG_PACKAGE_dnsmasq_full_dhcpv6=n
+
+# 第三方插件选择:
+CONFIG_PACKAGE_luci-app-arpbind  #IP/MAC绑定,[默认打开]
+CONFIG_PACKAGE_luci-app-adbyby-plus=n #去广告,[默认打开]
+CONFIG_PACKAGE_luci-app-accesscontrol=n #上网时间控制,[默认打开]
+CONFIG_PACKAGE_luci-app-unblockmusic=n #解锁网易云,[默认打开]
+#CONFIG_PACKAGE_luci-app-wol=y #WOL网络唤醒,[默认打开]
+#CONFIG_PACKAGE_luci-app-vsftpd=y #FTP服务器,[默认打开]
+#CONFIG_PACKAGE_luci-app-ipsec-vpnd=y #VPN服务器 IPSec,[默认打开]
+#CONFIG_PACKAGE_luci-app-zerotier=y #ZeroTier内网穿透,[默认打开]
+CONFIG_PACKAGE_luci-app-adguardhome=y #AdGuard home广告过滤
+CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
+CONFIG_PACKAGE_luci-app-serverchan=n #微信推送
+#CONFIG_PACKAGE_luci-app-smartdns-compat=y #SmartDns服务
+CONFIG_PACKAGE_luci-app-smartdns=y #SmartDns服务
+CONFIG_PACKAGE_luci-app-ttyd=y #终端
+CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
+CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
+CONFIG_PACKAGE_luci-app-qos-gargoyle=y #Gargoyle QoS流控
+CONFIG_PACKAGE_luci-app-vlmcsd=y #KMS激活服务器
+CONFIG_PACKAGE_luci-app-cpufreq=y #CPU 性能优化调节
+CONFIG_PACKAGE_luci-app-jd-dailybonus=y #JD签到
+CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
+CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
+CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
+CONFIG_PACKAGE_luci-app-cpufreq=y #CPU 性能优化调节
+CONFIG_PACKAGE_luci-app-watchcat=n #断网检测功能与定时重启
+CONFIG_PACKAGE_luci-app-autoreboot=n #定时重启
+CONFIG_PACKAGE_luci-app-docker=n #Docker容器
+#CONFIG_PACKAGE_luci-app-usb-printer=n  #USB 打印服务器
+#CONFIG_PACKAGE_luci-app-uugamebooster=n  #UU网游加速器
+#CONFIG_PACKAGE_luci-app-wireguard=n #VPN服务器 WireGuard
+#CONFIG_PACKAGE_luci-app-guest-wifi=n   #WiFi访客网络
+#CONFIG_PACKAGE_luci-app-qbittorrent=n  #BT下载工具(qBittorrent)
+#openvpn
+CONFIG_PACKAGE_luci-app-openvpn=y
+CONFIG_PACKAGE_luci-app-openvpn-server=y
+#SSRP+
+CONFIG_PACKAGE_luci-app-ssr-plus=n #SSRP+ ,[默认打开]
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=n
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=n
+# Passwall插件:
+CONFIG_PACKAGE_luci-app-haproxy-tcp=n #HAProxy负载均衡-TCP
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
+#多拨
+#CONFIG_PACKAGE_lluci-app-mwan3=n   #MWAN3负载均衡
+#CONFIG_PACKAGE_lluci-app-mwan3helper=n   #MWAN3分流助手
+#CONFIG_PACKAGE_luci-app-syncdial=n #多拨虚拟网卡（原macvlan）
+#主题
+CONFIG_PACKAGE_luci-theme-argon=y
