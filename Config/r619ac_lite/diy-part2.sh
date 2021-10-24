@@ -18,7 +18,7 @@
 sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/files/bin/config_generate
 sed -i "2i uci set vsftpd.@listen[0].enable4=0" ./package/lean/default-settings/files/zzz-default-settings    # 关闭FTP
 sed -i "3i uci commit vsftpd" ./package/lean/default-settings/files/zzz-default-settings
-sed -i "4i echo "conf-dir=/etc/dnsmasq.d" >> /etc/dnsmasq.conf" ./package/lean/default-settings/files/zzz-default-settings #DNSMASQ 设置
+#sed -i "4i echo "conf-dir=/etc/dnsmasq.d" >> /etc/dnsmasq.conf" ./package/lean/default-settings/files/zzz-default-settings #DNSMASQ 设置
 #sed -i "5i uci set turboacc.config.sw_flow='1'" ./package/lean/default-settings/files/zzz-default-settings # 默认开启网络加速
 #sed -i "6i uci set turboacc.config.hw_flow='1'" ./package/lean/default-settings/files/zzz-default-settings
 #sed -i "7i uci set turboacc.config.fullcone_nat='1'" ./package/lean/default-settings/files/zzz-default-settings
@@ -53,7 +53,7 @@ rm -rf luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git
 git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
-git clone https://github.com/jerrykuku/luci-app-vssr.git
+#git clone https://github.com/jerrykuku/luci-app-vssr.git
 
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 # git clone https://github.com/OpenWrt-Actions/luci-app-serverchan.git package/luci-app-serverchan
