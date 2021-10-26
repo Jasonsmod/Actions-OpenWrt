@@ -21,7 +21,7 @@
 | 3 |     [![](https://img.shields.io/badge/OpenWrt-Newifi_D2-FFFFFF.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/blob/main/.github/workflows/Newifi_D2.yml)   | [![](https://github.com/Jasonsmod/Actions-OpenWrt/workflows/Newifi_D2/badge.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/Newifi_D2.yml) |
 | 4 |     [![](https://img.shields.io/badge/OpenWrt-K2P-FFFFFF.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/blob/main/.github/workflow/K2P.yml)   | [![](https://github.com/Jasonsmod/Actions-OpenWrt/workflows/K2P/badge.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/K2P.yml) |
 | 5 |     [![](https://img.shields.io/badge/OpenWrt-X86-FFFFFF.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/blob/main/.github/workflows/Openwrt-X86.yml)   | [![](https://github.com/Jasonsmod/Actions-OpenWrt/workflows/Openwrt-X86/badge.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/Openwrt-X86.yml) |
-| 6 |     [![](https://img.shields.io/badge/OpenWrt-X86_64-FFFFFF.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/blob/main/.github/workflows/Openwrt-X86_64.yml)   | [![](https://github.com/Jasonsmod/Actions-OpenWrt/workflows/Openwrt-X86_64/badge.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/X86_64.yml) |
+| 6 |     [![](https://img.shields.io/badge/OpenWrt-X86_64-FFFFFF.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/blob/main/.github/workflows/Openwrt-X86_64.yml)   | [![](https://github.com/Jasonsmod/Actions-OpenWrt/workflows/Openwrt-X86_64/badge.svg)](https://github.com/Jasonsmod/Actions-OpenWrt/actions/workflows/Openwrt-X86_64.yml) |
 
 
 
