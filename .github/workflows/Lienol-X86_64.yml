@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  Set_directory : Config/lienol_X86_64
+  Set_directory : Config/lienol_X86_64/
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: 19.07
   FEEDS_CONF: feeds.conf.default
