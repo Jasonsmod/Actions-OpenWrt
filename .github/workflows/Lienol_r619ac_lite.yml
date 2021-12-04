@@ -22,7 +22,7 @@ on:
 env:
   Set_directory : Config/r619ac_lite/
   REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: 19.0.7
+  REPO_BRANCH: 19.07
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: x.config
   DIY_P1_SH: diy-part1.sh
