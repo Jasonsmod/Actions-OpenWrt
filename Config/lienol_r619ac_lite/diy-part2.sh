@@ -26,6 +26,29 @@ sed -i "3i uci commit vsftpd" ./package/lean/default-settings/files/zzz-default-
 #sed -i "9i uci commit turboacc" ./package/lean/default-settings/files/zzz-default-settings
 
 
+# 更新feeds文件
+# sed -i 's#diy1 https://github.com/xiaorouji/openwrt-package#diy1 https://github.com/db-one/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
+sed -i 's#src-git luci https://github.com/Lienol/openwrt-luci.git;17.01#src-git luci https://github.com/Lienol/openwrt-luci.git;19.07#g' feeds.conf.default #更换luci版本
+cat feeds.conf.default
+
+# 添加第三方软件包
+git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge -b 19.07
+
+# 更新并安装源
+./scripts/feeds clean
+./scripts/feeds update -a && ./scripts/feeds install -a
+
+# 替换更新passwall和ssrplus+
+rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
+rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
+
+# 为19.07添加libcap-bin依赖
+rm -rf feeds/packages/libs/libcap
+svn co https://github.com/openwrt/packages/trunk/libs/libcap feeds/packages/libs/libcap
+
 # WIFI名为MAC后六位
 # rm -rf package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # cp -f ../mac80211.sh package/kernel/mac80211/files/lib/wifi/
