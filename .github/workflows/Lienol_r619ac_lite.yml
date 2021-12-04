@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  Set_directory : Config/r619ac_lite/
+  Set_directory : Config/lienol_r619ac_lite/
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: 19.07
   FEEDS_CONF: feeds.conf.default
