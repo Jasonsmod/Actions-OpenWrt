@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: G-Dock-r619ac_Lite
+name: Lienol_r619ac_lite
 
 on:
   repository_dispatch:
