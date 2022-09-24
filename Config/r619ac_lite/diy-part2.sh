@@ -48,11 +48,13 @@ sed -i 's/IMG_PREFIX:=$(VERSION_DIST_SANITIZED)/IMG_PREFIX:=$(shell date +%Y%m%d
 git clone https://github.com/BoringCat/luci-app-mentohust.git package/luci-app-mentohust
 git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git package/mentohust
 
+
 cd package/lean  
 rm -rf luci-theme-argon  
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git
 git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
+git clone https://github.com/messense/aliyundrive-webdav.git package/aliyundrive-webdav $ 阿里云webdav
 #git clone https://github.com/jerrykuku/luci-app-vssr.git
 
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
