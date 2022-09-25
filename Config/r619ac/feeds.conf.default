@@ -11,7 +11,7 @@ src-git helloworld https://github.com/fw876/helloworld
 src-git kenzo https://github.com/kenzok8/openwrt-packages
 #src-git OpenWrt-packages https://github.com/OpenWrt-Actions/OpenWrt-Packages
 
-#src-git small https://github.com/kenzok8/small
+src-git small https://github.com/kenzok8/small
 src-git small8 https://github.com/kenzok8/small-package
 src-git oaf https://github.com/destan19/OpenAppFilter
 src-git passwall https://github.com/xiaorouji/openwrt-passwall
